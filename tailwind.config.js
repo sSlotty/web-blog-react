@@ -4,6 +4,11 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   presets: [],
   darkMode: false, // or 'media' or 'class'
+  rules: [
+    {
+      loader: require.resolve('css-loader'),
+    }
+  ],
   theme: {
     screens: {
       xs: '375px',
