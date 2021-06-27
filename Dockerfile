@@ -1,6 +1,5 @@
 FROM node:12.17.0 AS builder
 
-
 WORKDIR /app
 COPY package.json .
 RUN npm install

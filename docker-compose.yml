@@ -1,0 +1,19 @@
+version: "3.5"
+
+services:
+  react_blog:
+    image: oatwant43/react-blog:latest
+    container_name: react_blog
+    restart: always
+    networks:
+      - blog_thanathip_proxy
+    environment:
+      VIRTUAL_HOST: blog.thanathip.com
+      VIRTUAL_PORT: 80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+
+networks:
+  blog_thanathip_proxy:
+    external:
+      name: blog_thanathip_proxy
